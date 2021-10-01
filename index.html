@@ -1,10 +1,112 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-   
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Conversion</title>
 </head>
 <body>
+    <style>
+       .form-group{
+           display: flex;
+           height: 300px;
+       }
+       button{
+           width:45px;
+           height: 40px;
+       }
+       .row{
+           justify-content: center;
+       }
+       .afficher{
+           
+           border-radius:10px;
+           position: relative;
+           bottom:205px;
+       }
+       .titre{
+           text-transform: uppercase;
+           font-weight: bold;
+           font-size: 12px;
+           font-family: arial;
+           text-align: center;
+       }
+    </style>
+    <div class="container mt-5">
+        <div class="row">
+           
+            <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12"style="background-color:#b9f6ca; box-shadow: 10px 10px 10px;border-radius: 18px;">
+                <div class="titre">Système de Conversion de numero MOBILE de 8 à 10 chiffre</div>
+                <form style="margin-top: 25px;">
+                    <div class="form-group col-12">
+                       
+                        <input type="cell" class="form-control" id="decodage" placeholder="&nbsp;ENTRER VOTRE NUMERO A 8 CHIFFRE">
+                  
+                        <button type="button" class="btn btn-dark col font-weight-bold" onclick="conver()">Convertir</button>
+                        
+                    </div>
+                        <div class="afficher">
+                                <button type="button" id="affiche" class="btn btn-light col font-weight-bold"></button>
+                        </div>
+                </form>
+               
+            </div>
+        </div>
+    </div>
     
+    <script>
+        function conver(){
+               var saisie = document.getElementById("decodage").value;
+               var position = saisie.substr(0, 2)
+               var numero = position.toString()
+   
+               if(saisie.length < 8  || saisie.length > 8){
+               alert("saisir votre numero à 8 chiffre");
+               }
+   
+               else if((saisie.length === 8 ) && (numero === '01')
+               ||(numero === '02')||(numero=== '03')||(numero === '72')  
+               ||(numero === '53')||(numero === '71')||(numero === '52')){ 
+
+              document.getElementById('affiche').innerHTML = " Numero à 10 chiffre : 01"+saisie;
+                                                         
+                                                         }
+                                                 
+   
+               else if((saisie.length === 8 ) &&(numero === '05')
+               ||(numero === '04')||(numero === '44')||(numero === '66')
+               ||(numero === '56')||(numero === '45')||(numero === '86')||(numero === '85')||(numero === '06')){ 
+                                               
+                              document.getElementById('affiche').innerHTML = "Numero à 10 chiffre : 05"+saisie;
+                                                        
+                                                         }
+                                                 
+                
+               else if((saisie.length = 8 ) &&(numero === '07')||(numero === '08')
+                
+               ||(numero === '09')||(numero === '57')||(numero === '59')  
+                ||(numero === '58')||(numero === '79')||(numero === '89')||(numero=== '49')){ 
+                                                   
+                document.getElementById('affiche').innerHTML = "Numero à 10 chiffre : 07"+saisie;
+                                                          
+                                                         }
+              
+           else{
+               alert("AUREVOIR CECI N'EST PAS ATTRIBUE A UN RESEAU MOBILE!")
+           }
+       }
+      
+
+
+   </script><!-- fin javaScript -->
+   
+<!-- 
+    - un creation du bloc contenair
+    - 
+ -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 </body>
 </html>
